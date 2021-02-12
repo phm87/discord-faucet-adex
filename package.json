@@ -1,0 +1,16 @@
+{
+  "name": "discord-faucet-adex",
+  "version": "1.0.0",
+  "description": "Multicurrency faucet discord bot using AtomicDex as multi cryptocurrency lightwallet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "phm87",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "node-cron": "^2.0.3",
+    "wallet-address-validator": "^0.2.4"
+  }
+}
