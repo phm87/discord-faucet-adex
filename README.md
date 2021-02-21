@@ -77,6 +77,8 @@ chmod +x start_mm2.sh connect_coins.sh
 
 Detailled official instruction are available at ###
 
+
+
 ## How to launch
 1. Launch AtomicDEX-API/mm2
 ```bash
@@ -89,6 +91,7 @@ cd atomicDEX-API/target/debug
 ```bash
 ./connect_coins.sh
 ```
+Copy and paste elsewhere (in notepad as example) the "address" in the json output.
 
 3. In a screen, launch the faucet nodejs server
 ```bash
@@ -100,10 +103,36 @@ node index.js
 To quit the screen without killing it, press Ctrl, A, D
 To recall the screen, ``screen -r faucet``
 
+4. Fund the address displayed at step 2. For RICK and MORTY smartchains, you can grab few testcoins at:
+https://www.atomicexplorer.com/#/faucet/rick
+
+https://www.atomicexplorer.com/#/faucet/morty
+
+5. Invite the bot to your discord server: @@
+
 ## How to operate
 As operator, you should make sure that the mm2 instance is properly running, the all chosen coins are activated and that their electrums or explorers are online.
 
 See details availble in the official instructions to run the scripts in nohup or another tool to make sure that it is relaunched if it stops.
+
+### Troubleshooting
+```bash
+node index.js
+xx
+{ Error: connect ECONNREFUSED 127.0.0.1:7783
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1107:14)
+  errno: 'ECONNREFUSED',
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 7783 }
+```
+Please launch AtomicDEX-API/mm2 before launching the nodejs faucet.
+```bash
+cd ~/atomicDEX-API/target/debug
+./start_mm2.sh
+./connect_electrums.sh
+```
 
 ## How to use
 After the faucet setup, please execute the command ``!help`` and read the instructions.
